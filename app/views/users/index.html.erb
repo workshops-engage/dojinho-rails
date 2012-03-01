@@ -1,0 +1,9 @@
+<xmp>Do something here. Ha! Do you knew xmp tag?</xmp>
+
+<h1>Users</h1>
+
+<ul id="users">
+  <% for user in @users  %>
+  <li> <%= link_to user.name, user %></li>
+  <% end %>
+</ul>

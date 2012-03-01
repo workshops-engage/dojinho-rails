@@ -1,0 +1,6 @@
+<%= link_to "Add favorite", new_favorite_path %>
+<ul id="favorites">
+  <% for favorite in @favorites %>
+    <li data-rank="<%= favorite.rank %>"><span class="rank"><%= favorite.rank%></span><%= link_to favorite.movie.title, favorite.movie %></li>
+  <% end %>
+</ul>

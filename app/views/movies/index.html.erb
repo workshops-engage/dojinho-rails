@@ -1,0 +1,6 @@
+<h1>Movies</h1>
+<ul id="movies">
+  <% for movie in @movies %>
+    <li><%= link_to movie.title, movie %></li>
+  <% end %>
+</ul>

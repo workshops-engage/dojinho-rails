@@ -1,0 +1,22 @@
+
+<% if user_signed_in? %>
+  <div id="welcome">Welcome, <%= current_user.name %></div>
+  <%= link_to "Add favorite", new_favorite_path %>
+  <div id="sign_out"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
+<% else %>
+  <div id="sign_in">
+    <%= link_to "Sign in", new_user_session_path %>
+  </div> 
+
+
+<% end %>
+<div id="menu">
+    <%= link_to "Home", root_path %>
+    <%= link_to "Movies", movies_path %>
+    <%= link_to "Users", users_path %>
+  </div>
+  <ol id="top">
+    <% for movie in Movie.top.ten %> 
+    <li> <a href=""> <%= movie.title %> </a>  </li>
+    <% end %>
+  </ol>

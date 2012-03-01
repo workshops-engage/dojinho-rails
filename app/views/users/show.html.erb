@@ -1,0 +1,12 @@
+<xmp>Do something here. Ha! Do you knew xmp tag?</xmp>
+
+<h1><%=@user.name%></h1>
+
+<ol id="movies">
+  <% for favorite in @favorites %>
+  <li data-rank="<%=favorite.rank%>">
+    <%=link_to favorite.movie.title, favorite.movie%>
+  </li>
+
+  <% end %>
+</ol>

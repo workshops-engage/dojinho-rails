@@ -1,0 +1,9 @@
+<%= form_for @favorite do |f| %>
+  <%= f.label :movie %>
+  <%= f.select :movie_id, @movies.map{|movie| [movie.title, movie.id]} %>
+
+  <%= f.label :rank %> 
+  <%= f.select :rank, 1..10 %>
+  <%= f.submit %>
+
+<% end %>

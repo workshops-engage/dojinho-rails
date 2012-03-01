@@ -1,0 +1,40 @@
+<h1><%= @movie.title %></h1>
+
+<ul id="users">
+  <% for favorite in @movie.favorites %>
+    <li data-rank="<%= favorite.rank %>">
+        <span class="rank"><%= favorite.rank %> </span>
+        <%= link_to favorite.user.name, favorite.user %>
+    </li>
+  <% end %>
+</ul>
+
+<img id="poster" src="<%=@movie.imdb.poster%>" />
+
+
+<a id="trailer" href="<%= @movie.imdb.trailer_url %>">Trailer</a>
+<div id="director">
+  <%= @movie.imdb.director.to_sentence %>
+</div>
+
+<div id="year">
+  <%= @movie.imdb.year %>
+</div>
+
+<ul id="cast-members">
+  <% for member in @movie.imdb.cast_members %>
+    <li>
+        <%= member %> 
+    </li>
+  <% end %>
+</ul>
+
+<ul id="genres">
+  <% for g in @movie.imdb.genres %>
+    <li>
+        <%= g %> 
+    </li>
+  <% end %>
+</ul>
+
+
